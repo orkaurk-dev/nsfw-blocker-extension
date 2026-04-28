@@ -18,7 +18,7 @@ Note: Chrome and Edge do not let an unpacked extension rename its manifest name 
 1. Open `chrome://extensions` or `edge://extensions`.
 2. Turn on Developer mode.
 3. Click Load unpacked.
-4. Select this folder: `C:\Users\gusta\Desktop\nsfw-blocker-extension`.
+4. Select this folder: where you saved it.
 
 ## Notes
 
