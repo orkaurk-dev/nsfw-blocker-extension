@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NSFW Website Blocker Settings</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow" id="extension-name">NSFW Website Blocker</p>
+        <h1>Block adult sites with editable rules.</h1>
+        <p class="lede">Manage a starter blocklist, add your own domains or keyword filters, switch blocking on or off, and customize the display name with a cooldown.</p>
+      </div>
+      <label class="toggle">
+        <input type="checkbox" id="enabled" />
+        <span class="track"></span>
+        <span class="label">Blocking enabled</span>
+      </label>
+    </header>
+
+    <section class="panel status-panel">
+      <div>
+        <h2 id="status-title">Status</h2>
+        <p id="status-detail">Loading...</p>
+      </div>
+      <div class="status-actions">
+        <label class="duration">
+          <span>Lock duration</span>
+          <select id="lock-duration">
+            <option value="1">1 day</option>
+            <option value="3">3 days</option>
+            <option value="5" selected>5 days</option>
+            <option value="7">7 days</option>
+            <option value="14">14 days</option>
+            <option value="30">30 days</option>
+          </select>
+        </label>
+        <button id="lock-blocking" class="secondary" type="button">Lock blocking</button>
+        <button id="unlock-now" class="secondary" type="button">Unlock now</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <div>
+          <h2>Appearance</h2>
+          <p>Set the display name shown inside the extension UI. Name changes are locked for 1 hour after saving.</p>
+        </div>
+      </div>
+      <div class="appearance-grid">
+        <label class="grow">
+          <span>Display name</span>
+          <input id="display-name" type="text" maxlength="40" autocomplete="off" />
+        </label>
+      </div>
+      <div class="appearance-footer">
+        <span id="name-cooldown" class="cooldown-note"></span>
+        <button id="save-appearance" class="primary" type="button">Save appearance</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <div>
+          <h2>Add a blocked item</h2>
+          <p>Domain entries block that host and all subdomains. Keyword entries only match the hostname.</p>
+        </div>
+      </div>
+      <form id="add-form" class="form">
+        <label>
+          <span>Type</span>
+          <select id="entry-type">
+            <option value="domain">Domain</option>
+            <option value="keyword">Keyword</option>
+          </select>
+        </label>
+        <label class="grow">
+          <span>Value</span>
+          <input id="entry-value" type="text" placeholder="example.com or hentai" autocomplete="off" />
+        </label>
+        <button type="submit" class="primary">Add</button>
+      </form>
+    </section>
+
+    <section class="grid">
+      <article class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>Blocked domains</h2>
+            <p>These are the hostnames that will be stopped.</p>
+          </div>
+        </div>
+        <ul id="domains" class="list"></ul>
+      </article>
+
+      <article class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>Blocked keywords</h2>
+            <p>These are matched against the hostname.</p>
+          </div>
+        </div>
+        <ul id="keywords" class="list"></ul>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <button id="reset" class="secondary">Reset to defaults</button>
+      <span id="status" role="status"></span>
+    </footer>
+  </main>
+
+  <script src="defaults.js"></script>
+  <script src="security.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
