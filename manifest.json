@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "NSFW Website Blocker",
+  "version": "1.0.0",
+  "description": "Blocks configured NSFW websites and lets you manage your own domain list.",
+  "permissions": ["storage"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "NSFW Website Blocker",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["defaults.js", "security.js", "content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
+}
