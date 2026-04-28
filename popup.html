@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NSFW Website Blocker</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <main class="popup">
+    <div class="topbar">
+      <div class="title">
+        <p class="eyebrow" id="extension-name">NSFW Website Blocker</p>
+        <h1 id="state">Loading...</h1>
+      </div>
+      <button id="open-options" class="gear-button" type="button" aria-label="Open settings" title="Open settings">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M19.14 12.94c.04-.31.06-.62.06-.94s-.02-.63-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96a7.2 7.2 0 0 0-1.63-.94l-.36-2.54a.5.5 0 0 0-.5-.42h-3.84a.5.5 0 0 0-.5.42l-.36 2.54c-.57.22-1.11.53-1.63.94l-2.39-.96a.5.5 0 0 0-.6.22L2.71 7.84a.5.5 0 0 0 .12.64l2.03 1.58c-.04.31-.06.62-.06.94s.02.63.06.94L2.83 13.52a.5.5 0 0 0-.12.64l1.92 3.32a.5.5 0 0 0 .6.22l2.39-.96c.52.4 1.06.72 1.63.94l.36 2.54a.5.5 0 0 0 .5.42h3.84a.5.5 0 0 0 .5-.42l.36-2.54c.57-.22 1.11-.53 1.63-.94l2.39.96a.5.5 0 0 0 .6-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58ZM12 15.5A3.5 3.5 0 1 1 12 8a3.5 3.5 0 0 1 0 7.5Z"/>
+        </svg>
+      </button>
+    </div>
+    <section class="controls">
+      <label class="switch">
+        <input type="checkbox" id="enabled" />
+        <span>Blocking enabled</span>
+      </label>
+      <label class="duration">
+        <span>Lock duration</span>
+        <select id="lock-duration">
+          <option value="1">1 day</option>
+          <option value="3">3 days</option>
+          <option value="5" selected>5 days</option>
+          <option value="7">7 days</option>
+          <option value="14">14 days</option>
+          <option value="30">30 days</option>
+        </select>
+      </label>
+      <button id="lock-blocking" class="secondary" type="button">Lock blocking</button>
+    </section>
+  </main>
+  <script src="defaults.js"></script>
+  <script src="security.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
